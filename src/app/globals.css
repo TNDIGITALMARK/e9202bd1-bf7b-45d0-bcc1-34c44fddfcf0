@@ -225,3 +225,38 @@ html {
 .menu-card:hover {
   transform: scale(1.02);
 }
+
+/* Logo pulse animation */
+@keyframes logo-pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+.logo-pulse:hover {
+  animation: logo-pulse 1.5s ease-in-out;
+}
+
+/* Coffee steam animation */
+@keyframes steam {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 0.6;
+  }
+  100% {
+    transform: translateY(-20px) rotate(5deg);
+    opacity: 0;
+  }
+}
+
+.steam::after {
+  content: '☕';
+  position: absolute;
+  animation: steam 2s ease-in-out infinite;
+  font-size: 1.2rem;
+  left: 50%;
+  transform: translateX(-50%);
+}

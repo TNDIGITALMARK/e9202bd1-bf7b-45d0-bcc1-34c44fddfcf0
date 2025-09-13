@@ -8,7 +8,10 @@ export default function Index() {
       {/* Header */}
       <header className="fixed top-0 w-full bg-background/95 backdrop-blur-sm z-50 border-b">
         <nav className="container mx-auto px-6 py-4 flex justify-between items-center">
-          <div className="text-2xl font-bold text-foreground">Brew & Bean</div>
+          <div className="flex items-center space-x-3">
+            <img src="/generated/logo.png" alt="Brew & Bean" className="h-12 w-12 logo-pulse" />
+            <div className="text-2xl font-bold text-foreground">Brew & Bean</div>
+          </div>
           <div className="hidden md:flex space-x-8">
             <a href="#home" className="text-foreground hover:text-primary transition-colors">Home</a>
             <a href="#menu" className="text-foreground hover:text-primary transition-colors">Menu</a>
@@ -272,7 +275,10 @@ export default function Index() {
       {/* Footer */}
       <footer className="py-12 bg-background border-t">
         <div className="container mx-auto px-6 text-center">
-          <div className="text-2xl font-bold mb-4 text-foreground">Brew & Bean</div>
+          <div className="flex items-center justify-center space-x-3 mb-4">
+            <img src="/generated/logo.png" alt="Brew & Bean" className="h-10 w-10" />
+            <div className="text-2xl font-bold text-foreground">Brew & Bean</div>
+          </div>
           <p className="text-muted-foreground mb-6">
             Crafting perfect moments, one cup at a time.
           </p>
