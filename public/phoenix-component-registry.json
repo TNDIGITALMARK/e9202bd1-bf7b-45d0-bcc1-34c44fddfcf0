@@ -1,0 +1,328 @@
+{
+  "projectId": "e9202bd1-bf7b-45d0-bcc1-34c44fddfcf0",
+  "userId": "hw8u8FgXeBcQGo9CRezTWmEivX92",
+  "version": "1.0.0",
+  "generatedAt": "2025-09-13T17:34:28.422Z",
+  "components": {
+    "phoenix-1757784868397": {
+      "phoenixId": "phoenix-1757784868397",
+      "componentName": "Error",
+      "filePath": "src/app/error.tsx",
+      "lineNumber": 5,
+      "columnNumber": 15,
+      "sourceCode": "export default function Error() {\n  return (\n    <div className=\"min-h-screen flex items-center justify-center\">\n      <div className=\"text-center\">\n        <h1 className=\"text-4xl font-bold mb-4\">500 - Server Error</h1>\n        <p className=\"text-xl mb-4\">Something went wrong. Please try again later.</p>\n        <a href=\"/\" className=\"text-blue-500 hover:text-blue-700 underline\">\n          Return to Home\n        </a>\n      </div>\n    </div>\n  );\n}",
+      "props": [],
+      "imports": [],
+      "modificationHints": [
+        "text-update",
+        "style-change"
+      ],
+      "astAnalysis": {
+        "componentType": "functional",
+        "complexity": "moderate"
+      }
+    },
+    "phoenix-1757784868398": {
+      "phoenixId": "phoenix-1757784868398",
+      "componentName": "GlobalError",
+      "filePath": "src/app/global-error.tsx",
+      "lineNumber": 5,
+      "columnNumber": 15,
+      "sourceCode": "export default function GlobalError({\n  error,\n  reset,\n}: {\n  error: Error & { digest?: string }\n  reset: () => void\n}) {\n  return (\n    <html>\n      <body>\n        <div style={{\n          minHeight: '100vh',\n          display: 'flex',\n          alignItems: 'center',\n          justifyContent: 'center',\n          padding: '2rem',\n          fontFamily: 'system-ui, sans-serif'\n        }}>\n          <div style={{ textAlign: 'center', maxWidth: '500px' }}>\n            <h1 style={{ fontSize: '2rem', marginBottom: '1rem', color: '#dc2626' }}>\n              Something went wrong!\n            </h1>\n            <p style={{ fontSize: '1.1rem', marginBottom: '2rem', color: '#6b7280' }}>\n              The application encountered an unexpected error. This is likely temporary.\n            </p>\n            <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>\n              <button\n                onClick={reset}\n                style={{\n                  padding: '0.75rem 1.5rem',\n                  backgroundColor: '#3b82f6',\n                  color: 'white',\n                  border: 'none',\n                  borderRadius: '0.5rem',\n                  cursor: 'pointer',\n                  fontSize: '1rem'\n                }}\n              >\n                Try Again\n              </button>\n              <button\n                onClick={() => window.location.href = '/'}\n                style={{\n                  padding: '0.75rem 1.5rem',\n                  backgroundColor: '#6b7280',\n                  color: 'white',\n                  border: 'none',\n                  borderRadius: '0.5rem',\n                  cursor: 'pointer',\n                  fontSize: '1rem'\n                }}\n              >\n                Go Home\n              </button>\n            </div>\n            {process.env.NODE_ENV === 'development' && (\n              <details style={{ marginTop: '2rem', textAlign: 'left' }}>\n                <summary style={{ cursor: 'pointer', fontWeight: 'bold' }}>\n                  Error Details (Development Only)\n                </summary>\n                <pre style={{ \n                  marginTop: '1rem', \n                  padding: '1rem', \n                  backgroundColor: '#f3f4f6', \n                  borderRadius: '0.5rem',\n                  fontSize: '0.875rem',\n                  overflow: 'auto'\n                }}>\n                  {error.message}\n                  {error.stack && '\\n\\nStack trace:\\n' + error.stack}\n                </pre>\n              </details>\n            )}\n          </div>\n        </div>\n      </body>\n    </html>\n  )\n}",
+      "props": [
+        {
+          "name": "error",
+          "type": "unknown",
+          "required": false
+        },
+        {
+          "name": "reset",
+          "type": "unknown",
+          "required": false
+        }
+      ],
+      "imports": [],
+      "modificationHints": [
+        "text-update",
+        "style-change",
+        "careful-modification",
+        "test-thoroughly"
+      ],
+      "astAnalysis": {
+        "componentType": "functional",
+        "complexity": "complex"
+      }
+    },
+    "phoenix-1757784868399": {
+      "phoenixId": "phoenix-1757784868399",
+      "componentName": "RootLayout",
+      "filePath": "src/app/layout.tsx",
+      "lineNumber": 25,
+      "columnNumber": 15,
+      "sourceCode": "export default function RootLayout({\n  children,\n}: Readonly<{\n  children: React.ReactNode;\n}>) {\n  return (\n    <html lang=\"en\" suppressHydrationWarning>\n      <body\n        className={`${geistSans.variable} ${geistMono.variable} antialiased`}\n      >\n        <QueryProvider>\n          <ThemeProvider\n            attribute=\"class\"\n            defaultTheme=\"system\"\n            enableSystem\n            disableTransitionOnChange\n          >\n            <TooltipProvider>\n              {children}\n              <Toaster />\n              <Sonner />\n            </TooltipProvider>\n          </ThemeProvider>\n        </QueryProvider>\n      </body>\n    </html>\n  );\n}",
+      "props": [
+        {
+          "name": "children",
+          "type": "unknown",
+          "required": false
+        }
+      ],
+      "imports": [],
+      "modificationHints": [
+        "text-update",
+        "style-change"
+      ],
+      "astAnalysis": {
+        "componentType": "functional",
+        "complexity": "moderate"
+      }
+    },
+    "phoenix-1757784868400": {
+      "phoenixId": "phoenix-1757784868400",
+      "componentName": "Loading",
+      "filePath": "src/app/loading.tsx",
+      "lineNumber": 1,
+      "columnNumber": 15,
+      "sourceCode": "export default function Loading() {\n  return (\n    <div className=\"min-h-screen flex items-center justify-center\">\n      <div className=\"text-center\">\n        <p className=\"text-xl\">Loading...</p>\n      </div>\n    </div>\n  );\n}",
+      "props": [],
+      "imports": [],
+      "modificationHints": [
+        "text-update",
+        "style-change"
+      ],
+      "astAnalysis": {
+        "componentType": "functional",
+        "complexity": "moderate"
+      }
+    },
+    "phoenix-1757784868401": {
+      "phoenixId": "phoenix-1757784868401",
+      "componentName": "NotFound",
+      "filePath": "src/app/not-found.tsx",
+      "lineNumber": 3,
+      "columnNumber": 15,
+      "sourceCode": "export default function NotFound() {\n  return (\n    <div className=\"min-h-screen flex items-center justify-center\">\n      <div className=\"text-center\">\n        <h1 className=\"text-4xl font-bold mb-4\">404 - Page Not Found</h1>\n        <p className=\"text-xl mb-4\">The page you are looking for does not exist.</p>\n        <a href=\"/\" className=\"text-blue-500 hover:text-blue-700 underline\">\n          Return to Home\n        </a>\n      </div>\n    </div>\n  );\n}",
+      "props": [],
+      "imports": [],
+      "modificationHints": [
+        "text-update",
+        "style-change"
+      ],
+      "astAnalysis": {
+        "componentType": "functional",
+        "complexity": "moderate"
+      }
+    },
+    "phoenix-1757784868402": {
+      "phoenixId": "phoenix-1757784868402",
+      "componentName": "Index",
+      "filePath": "src/app/page.tsx",
+      "lineNumber": 5,
+      "columnNumber": 15,
+      "sourceCode": "export default function Index() {\n  return (\n    <div className=\"min-h-screen bg-background\">\n      {/* Header */}\n      <header className=\"fixed top-0 w-full bg-background/95 backdrop-blur-sm z-50 border-b\">\n        <nav className=\"container mx-auto px-6 py-4 flex justify-between items-center\">\n          <div className=\"text-2xl font-bold text-foreground\">Brew & Bean</div>\n          <div className=\"hidden md:flex space-x-8\">\n            <a href=\"#home\" className=\"text-foreground hover:text-primary transition-colors\">Home</a>\n            <a href=\"#menu\" className=\"text-foreground hover:text-primary transition-colors\">Menu</a>\n            <a href=\"#about\" className=\"text-foreground hover:text-primary transition-colors\">About</a>\n            <a href=\"#contact\" className=\"text-foreground hover:text-primary transition-colors\">Contact</a>\n          </div>\n          <MobileMenu />\n        </nav>\n      </header>\n\n      {/* Hero Section */}\n      <section id=\"home\" className=\"min-h-screen flex items-center justify-center relative\">\n        <div className=\"absolute inset-0 coffee-hero-bg\"></div>\n        <div className=\"relative z-10 text-center max-w-4xl px-6\">\n          <h1 className=\"text-6xl md:text-7xl font-bold mb-6 text-foreground\">\n            Perfect Coffee,<br />\n            <span className=\"text-amber-600 dark:text-amber-400\">Perfect Moment</span>\n          </h1>\n          <p className=\"text-xl md:text-2xl mb-8 text-muted-foreground max-w-2xl mx-auto\">\n            Discover the finest artisanal coffee beans, expertly roasted and brewed to perfection in the heart of the city.\n          </p>\n          <div className=\"flex flex-col sm:flex-row gap-4 justify-center\">\n            <a href=\"#menu\" className=\"inline-block px-8 py-4 bg-primary text-primary-foreground rounded-lg font-semibold hover:bg-primary/90 transition-colors hover-lift\">\n              View Menu\n            </a>\n            <a href=\"#about\" className=\"inline-block px-8 py-4 border border-border text-foreground rounded-lg font-semibold hover:bg-accent transition-colors hover-lift\">\n              Our Story\n            </a>\n          </div>\n        </div>\n      </section>\n\n      {/* Menu Section */}\n      <section id=\"menu\" className=\"py-20 bg-muted/30\">\n        <div className=\"container mx-auto px-6\">\n          <div className=\"text-center mb-16\">\n            <h2 className=\"text-4xl md:text-5xl font-bold mb-4 text-foreground\">Our Menu</h2>\n            <p className=\"text-xl text-muted-foreground\">Handcrafted with love, served with passion</p>\n          </div>\n          \n          <div className=\"grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto\">\n            {/* Coffee Menu */}\n            <div className=\"bg-card p-8 rounded-xl shadow-sm border menu-card hover-lift\">\n              <h3 className=\"text-2xl font-bold mb-6 text-card-foreground\">Signature Coffees</h3>\n              <div className=\"space-y-4\">\n                <div className=\"flex justify-between items-center\">\n                  <div>\n                    <h4 className=\"font-semibold text-card-foreground\">Espresso</h4>\n                    <p className=\"text-muted-foreground text-sm\">Rich and bold</p>\n                  </div>\n                  <span className=\"font-semibold text-card-foreground\">$3.50</span>\n                </div>\n                <div className=\"flex justify-between items-center\">\n                  <div>\n                    <h4 className=\"font-semibold text-card-foreground\">Cappuccino</h4>\n                    <p className=\"text-muted-foreground text-sm\">Perfectly balanced</p>\n                  </div>\n                  <span className=\"font-semibold text-card-foreground\">$4.75</span>\n                </div>\n                <div className=\"flex justify-between items-center\">\n                  <div>\n                    <h4 className=\"font-semibold text-card-foreground\">Flat White</h4>\n                    <p className=\"text-muted-foreground text-sm\">Smooth and creamy</p>\n                  </div>\n                  <span className=\"font-semibold text-card-foreground\">$5.25</span>\n                </div>\n                <div className=\"flex justify-between items-center\">\n                  <div>\n                    <h4 className=\"font-semibold text-card-foreground\">Cold Brew</h4>\n                    <p className=\"text-muted-foreground text-sm\">Slow-steeped perfection</p>\n                  </div>\n                  <span className=\"font-semibold text-card-foreground\">$4.50</span>\n                </div>\n              </div>\n            </div>\n\n            {/* Pastries Menu */}\n            <div className=\"bg-card p-8 rounded-xl shadow-sm border menu-card hover-lift\">\n              <h3 className=\"text-2xl font-bold mb-6 text-card-foreground\">Fresh Pastries</h3>\n              <div className=\"space-y-4\">\n                <div className=\"flex justify-between items-center\">\n                  <div>\n                    <h4 className=\"font-semibold text-card-foreground\">Croissant</h4>\n                    <p className=\"text-muted-foreground text-sm\">Buttery and flaky</p>\n                  </div>\n                  <span className=\"font-semibold text-card-foreground\">$3.25</span>\n                </div>\n                <div className=\"flex justify-between items-center\">\n                  <div>\n                    <h4 className=\"font-semibold text-card-foreground\">Blueberry Muffin</h4>\n                    <p className=\"text-muted-foreground text-sm\">Bursting with berries</p>\n                  </div>\n                  <span className=\"font-semibold text-card-foreground\">$2.95</span>\n                </div>\n                <div className=\"flex justify-between items-center\">\n                  <div>\n                    <h4 className=\"font-semibold text-card-foreground\">Almond Danish</h4>\n                    <p className=\"text-muted-foreground text-sm\">Sweet and nutty</p>\n                  </div>\n                  <span className=\"font-semibold text-card-foreground\">$4.50</span>\n                </div>\n                <div className=\"flex justify-between items-center\">\n                  <div>\n                    <h4 className=\"font-semibold text-card-foreground\">Chocolate Chip Cookie</h4>\n                    <p className=\"text-muted-foreground text-sm\">Warm and gooey</p>\n                  </div>\n                  <span className=\"font-semibold text-card-foreground\">$2.50</span>\n                </div>\n              </div>\n            </div>\n\n            {/* Specialty Drinks */}\n            <div className=\"bg-card p-8 rounded-xl shadow-sm border menu-card hover-lift\">\n              <h3 className=\"text-2xl font-bold mb-6 text-card-foreground\">Specialty Drinks</h3>\n              <div className=\"space-y-4\">\n                <div className=\"flex justify-between items-center\">\n                  <div>\n                    <h4 className=\"font-semibold text-card-foreground\">Matcha Latte</h4>\n                    <p className=\"text-muted-foreground text-sm\">Premium Japanese matcha</p>\n                  </div>\n                  <span className=\"font-semibold text-card-foreground\">$5.75</span>\n                </div>\n                <div className=\"flex justify-between items-center\">\n                  <div>\n                    <h4 className=\"font-semibold text-card-foreground\">Chai Tea Latte</h4>\n                    <p className=\"text-muted-foreground text-sm\">Aromatic spice blend</p>\n                  </div>\n                  <span className=\"font-semibold text-card-foreground\">$4.95</span>\n                </div>\n                <div className=\"flex justify-between items-center\">\n                  <div>\n                    <h4 className=\"font-semibold text-card-foreground\">Golden Milk</h4>\n                    <p className=\"text-muted-foreground text-sm\">Turmeric wellness blend</p>\n                  </div>\n                  <span className=\"font-semibold text-card-foreground\">$5.25</span>\n                </div>\n                <div className=\"flex justify-between items-center\">\n                  <div>\n                    <h4 className=\"font-semibold text-card-foreground\">Hot Chocolate</h4>\n                    <p className=\"text-muted-foreground text-sm\">Rich Belgian chocolate</p>\n                  </div>\n                  <span className=\"font-semibold text-card-foreground\">$4.25</span>\n                </div>\n              </div>\n            </div>\n          </div>\n        </div>\n      </section>\n\n      {/* About Section */}\n      <section id=\"about\" className=\"py-20\">\n        <div className=\"container mx-auto px-6\">\n          <div className=\"max-w-4xl mx-auto text-center\">\n            <h2 className=\"text-4xl md:text-5xl font-bold mb-8 text-foreground\">Our Story</h2>\n            <p className=\"text-xl text-muted-foreground mb-8 leading-relaxed\">\n              Founded in 2010, Brew & Bean began as a small neighborhood coffee shop with a simple mission: \n              to bring people together over exceptional coffee. We source our beans directly from sustainable farms \n              around the world, ensuring every cup tells a story of craftsmanship and care.\n            </p>\n            <div className=\"grid grid-cols-1 md:grid-cols-3 gap-8 mt-16\">\n              <div className=\"text-center\">\n                <div className=\"text-4xl font-bold text-amber-600 dark:text-amber-400 mb-2\">12+</div>\n                <p className=\"text-muted-foreground\">Years of Excellence</p>\n              </div>\n              <div className=\"text-center\">\n                <div className=\"text-4xl font-bold text-amber-600 dark:text-amber-400 mb-2\">50k+</div>\n                <p className=\"text-muted-foreground\">Happy Customers</p>\n              </div>\n              <div className=\"text-center\">\n                <div className=\"text-4xl font-bold text-amber-600 dark:text-amber-400 mb-2\">25</div>\n                <p className=\"text-muted-foreground\">Coffee Varieties</p>\n              </div>\n            </div>\n          </div>\n        </div>\n      </section>\n\n      {/* Contact Section */}\n      <section id=\"contact\" className=\"py-20 bg-muted/30\">\n        <div className=\"container mx-auto px-6\">\n          <div className=\"text-center mb-16\">\n            <h2 className=\"text-4xl md:text-5xl font-bold mb-4 text-foreground\">Visit Us</h2>\n            <p className=\"text-xl text-muted-foreground\">Come experience the perfect cup</p>\n          </div>\n          \n          <div className=\"grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-6xl mx-auto\">\n            <div className=\"space-y-8\">\n              <div>\n                <h3 className=\"text-2xl font-bold mb-4 text-foreground\">Location & Hours</h3>\n                <div className=\"space-y-4 text-muted-foreground\">\n                  <p className=\"flex items-start gap-3\">\n                    <span className=\"font-semibold text-foreground min-w-20\">Address:</span>\n                    123 Coffee Street<br />Downtown District<br />City, State 12345\n                  </p>\n                  <p className=\"flex items-center gap-3\">\n                    <span className=\"font-semibold text-foreground min-w-20\">Phone:</span>\n                    (555) 123-BREW\n                  </p>\n                  <p className=\"flex items-center gap-3\">\n                    <span className=\"font-semibold text-foreground min-w-20\">Email:</span>\n                    hello@brewandbean.com\n                  </p>\n                </div>\n              </div>\n              \n              <div>\n                <h4 className=\"text-xl font-semibold mb-3 text-foreground\">Opening Hours</h4>\n                <div className=\"space-y-2 text-muted-foreground\">\n                  <p className=\"flex justify-between\">\n                    <span>Monday - Friday</span>\n                    <span>6:30 AM - 8:00 PM</span>\n                  </p>\n                  <p className=\"flex justify-between\">\n                    <span>Saturday</span>\n                    <span>7:00 AM - 9:00 PM</span>\n                  </p>\n                  <p className=\"flex justify-between\">\n                    <span>Sunday</span>\n                    <span>8:00 AM - 6:00 PM</span>\n                  </p>\n                </div>\n              </div>\n            </div>\n            \n            <div className=\"bg-card p-8 rounded-xl border\">\n              <h3 className=\"text-2xl font-bold mb-6 text-card-foreground\">Get in Touch</h3>\n              <form className=\"space-y-4\">\n                <div>\n                  <input \n                    type=\"text\" \n                    placeholder=\"Your Name\" \n                    className=\"w-full px-4 py-3 bg-background border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-ring text-foreground placeholder:text-muted-foreground\"\n                  />\n                </div>\n                <div>\n                  <input \n                    type=\"email\" \n                    placeholder=\"Your Email\" \n                    className=\"w-full px-4 py-3 bg-background border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-ring text-foreground placeholder:text-muted-foreground\"\n                  />\n                </div>\n                <div>\n                  <textarea \n                    placeholder=\"Your Message\" \n                    rows={4}\n                    className=\"w-full px-4 py-3 bg-background border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-ring text-foreground placeholder:text-muted-foreground resize-none\"\n                  ></textarea>\n                </div>\n                <button \n                  type=\"submit\" \n                  className=\"w-full px-6 py-3 bg-primary text-primary-foreground rounded-lg font-semibold hover:bg-primary/90 transition-colors\"\n                >\n                  Send Message\n                </button>\n              </form>\n            </div>\n          </div>\n        </div>\n      </section>\n\n      {/* Footer */}\n      <footer className=\"py-12 bg-background border-t\">\n        <div className=\"container mx-auto px-6 text-center\">\n          <div className=\"text-2xl font-bold mb-4 text-foreground\">Brew & Bean</div>\n          <p className=\"text-muted-foreground mb-6\">\n            Crafting perfect moments, one cup at a time.\n          </p>\n          <div className=\"flex justify-center space-x-6 text-muted-foreground\">\n            <a href=\"#\" className=\"hover:text-foreground transition-colors\">Privacy Policy</a>\n            <a href=\"#\" className=\"hover:text-foreground transition-colors\">Terms of Service</a>\n            <a href=\"#\" className=\"hover:text-foreground transition-colors\">Follow Us</a>\n          </div>\n          <p className=\"mt-8 text-sm text-muted-foreground\">\n            © 2024 Brew & Bean. All rights reserved.\n          </p>\n        </div>\n      </footer>\n    </div>\n  );\n}",
+      "props": [],
+      "imports": [],
+      "modificationHints": [
+        "text-update",
+        "style-change",
+        "careful-modification",
+        "test-thoroughly"
+      ],
+      "astAnalysis": {
+        "componentType": "functional",
+        "complexity": "complex"
+      }
+    },
+    "phoenix-1757784868403": {
+      "phoenixId": "phoenix-1757784868403",
+      "componentName": "MobileMenu",
+      "filePath": "src/components/MobileMenu.tsx",
+      "lineNumber": 5,
+      "columnNumber": 15,
+      "sourceCode": "export default function MobileMenu() {\n  const [isOpen, setIsOpen] = useState(false)\n\n  const toggleMenu = () => {\n    setIsOpen(!isOpen)\n  }\n\n  const closeMenu = () => {\n    setIsOpen(false)\n  }\n\n  return (\n    <>\n      {/* Mobile menu button */}\n      <button\n        className=\"md:hidden flex flex-col justify-center items-center w-8 h-8 space-y-1\"\n        onClick={toggleMenu}\n        aria-label=\"Toggle mobile menu\"\n      >\n        <span className={`w-6 h-0.5 bg-foreground transition-all duration-300 ${isOpen ? 'rotate-45 translate-y-2' : ''}`}></span>\n        <span className={`w-6 h-0.5 bg-foreground transition-all duration-300 ${isOpen ? 'opacity-0' : ''}`}></span>\n        <span className={`w-6 h-0.5 bg-foreground transition-all duration-300 ${isOpen ? '-rotate-45 -translate-y-2' : ''}`}></span>\n      </button>\n\n      {/* Mobile menu overlay */}\n      {isOpen && (\n        <div \n          className=\"fixed inset-0 bg-background/95 backdrop-blur-sm z-40 md:hidden\"\n          onClick={closeMenu}\n        >\n          <nav className=\"flex flex-col items-center justify-center h-full space-y-8 text-2xl\">\n            <a \n              href=\"#home\" \n              className=\"text-foreground hover:text-primary transition-colors\"\n              onClick={closeMenu}\n            >\n              Home\n            </a>\n            <a \n              href=\"#menu\" \n              className=\"text-foreground hover:text-primary transition-colors\"\n              onClick={closeMenu}\n            >\n              Menu\n            </a>\n            <a \n              href=\"#about\" \n              className=\"text-foreground hover:text-primary transition-colors\"\n              onClick={closeMenu}\n            >\n              About\n            </a>\n            <a \n              href=\"#contact\" \n              className=\"text-foreground hover:text-primary transition-colors\"\n              onClick={closeMenu}\n            >\n              Contact\n            </a>\n          </nav>\n        </div>\n      )}\n    </>\n  )\n}",
+      "props": [],
+      "imports": [],
+      "modificationHints": [
+        "text-update",
+        "style-change",
+        "careful-modification",
+        "test-thoroughly",
+        "state-management"
+      ],
+      "astAnalysis": {
+        "componentType": "functional",
+        "hooks": [
+          "useState"
+        ],
+        "complexity": "complex"
+      }
+    },
+    "phoenix-1757784868404": {
+      "phoenixId": "phoenix-1757784868404",
+      "componentName": "QueryProvider",
+      "filePath": "src/components/query-provider.tsx",
+      "lineNumber": 6,
+      "columnNumber": 7,
+      "sourceCode": "export function QueryProvider({ children }: { children: React.ReactNode }) {\n  const [queryClient] = useState(() => new QueryClient())\n\n  return (\n    <QueryClientProvider client={queryClient}>\n      {children}\n    </QueryClientProvider>\n  )\n}",
+      "props": [
+        {
+          "name": "children",
+          "type": "unknown",
+          "required": false
+        }
+      ],
+      "imports": [],
+      "modificationHints": [
+        "text-update",
+        "style-change",
+        "state-management"
+      ],
+      "astAnalysis": {
+        "componentType": "functional",
+        "hooks": [
+          "useState"
+        ],
+        "complexity": "moderate"
+      }
+    },
+    "phoenix-1757784868405": {
+      "phoenixId": "phoenix-1757784868405",
+      "componentName": "ThemeProvider",
+      "filePath": "src/components/theme-provider.tsx",
+      "lineNumber": 6,
+      "columnNumber": 7,
+      "sourceCode": "export function ThemeProvider({\n  children,\n  ...props\n}: React.ComponentProps<typeof NextThemesProvider>) {\n  return <NextThemesProvider {...props}>{children}</NextThemesProvider>\n}",
+      "props": [
+        {
+          "name": "children",
+          "type": "unknown",
+          "required": false
+        }
+      ],
+      "imports": [],
+      "modificationHints": [
+        "text-update",
+        "style-change"
+      ],
+      "astAnalysis": {
+        "componentType": "functional",
+        "complexity": "simple"
+      }
+    },
+    "phoenix-1757784868406": {
+      "phoenixId": "phoenix-1757784868406",
+      "componentName": "Badge",
+      "filePath": "src/components/ui/badge.tsx",
+      "lineNumber": 30,
+      "columnNumber": 0,
+      "sourceCode": "function Badge({ className, variant, ...props }: BadgeProps) {\n  return (\n    <div className={cn(badgeVariants({ variant }), className)} {...props} />\n  )\n}",
+      "props": [
+        {
+          "name": "className",
+          "type": "unknown",
+          "required": false
+        },
+        {
+          "name": "variant",
+          "type": "unknown",
+          "required": false
+        }
+      ],
+      "imports": [],
+      "modificationHints": [
+        "text-update",
+        "style-change"
+      ],
+      "astAnalysis": {
+        "componentType": "functional",
+        "complexity": "moderate"
+      }
+    },
+    "phoenix-1757784868407": {
+      "phoenixId": "phoenix-1757784868407",
+      "componentName": "Calendar",
+      "filePath": "src/components/ui/calendar.tsx",
+      "lineNumber": 10,
+      "columnNumber": 0,
+      "sourceCode": "function Calendar({\n  className,\n  classNames,\n  showOutsideDays = true,\n  ...props\n}: CalendarProps) {\n  return (\n    <DayPicker\n      showOutsideDays={showOutsideDays}\n      className={cn(\"p-3\", className)}\n      classNames={{\n        months: \"flex flex-col sm:flex-row space-y-4 sm:space-x-4 sm:space-y-0\",\n        month: \"space-y-4\",\n        caption: \"flex justify-center pt-1 relative items-center\",\n        caption_label: \"text-sm font-medium\",\n        nav: \"space-x-1 flex items-center\",\n        nav_button: cn(\n          buttonVariants({ variant: \"outline\" }),\n          \"h-7 w-7 bg-transparent p-0 opacity-50 hover:opacity-100\"\n        ),\n        nav_button_previous: \"absolute left-1\",\n        nav_button_next: \"absolute right-1\",\n        table: \"w-full border-collapse space-y-1\",\n        head_row: \"flex\",\n        head_cell:\n          \"text-muted-foreground rounded-md w-9 font-normal text-[0.8rem]\",\n        row: \"flex w-full mt-2\",\n        cell: \"h-9 w-9 text-center text-sm p-0 relative [&:has([aria-selected].day-range-end)]:rounded-r-md [&:has([aria-selected].day-outside)]:bg-accent/50 [&:has([aria-selected])]:bg-accent first:[&:has([aria-selected])]:rounded-l-md last:[&:has([aria-selected])]:rounded-r-md focus-within:relative focus-within:z-20\",\n        day: cn(\n          buttonVariants({ variant: \"ghost\" }),\n          \"h-9 w-9 p-0 font-normal aria-selected:opacity-100\"\n        ),\n        day_range_end: \"day-range-end\",\n        day_selected:\n          \"bg-primary text-primary-foreground hover:bg-primary hover:text-primary-foreground focus:bg-primary focus:text-primary-foreground\",\n        day_today: \"bg-accent text-accent-foreground\",\n        day_outside:\n          \"day-outside text-muted-foreground opacity-50 aria-selected:bg-accent/50 aria-selected:text-muted-foreground aria-selected:opacity-30\",\n        day_disabled: \"text-muted-foreground opacity-50\",\n        day_range_middle:\n          \"aria-selected:bg-accent aria-selected:text-accent-foreground\",\n        day_hidden: \"invisible\",\n        ...classNames,\n      }}\n      components={{\n        Chevron: (props) => props.orientation === 'left' ? <ChevronLeft className=\"h-4 w-4\" /> : <ChevronRight className=\"h-4 w-4\" />,\n      }}\n      {...props}\n    />\n  );\n}",
+      "props": [
+        {
+          "name": "className",
+          "type": "unknown",
+          "required": false
+        },
+        {
+          "name": "classNames",
+          "type": "unknown",
+          "required": false
+        },
+        {
+          "name": "showOutsideDays",
+          "type": "unknown",
+          "required": false
+        }
+      ],
+      "imports": [],
+      "modificationHints": [
+        "text-update",
+        "style-change",
+        "careful-modification",
+        "test-thoroughly"
+      ],
+      "astAnalysis": {
+        "componentType": "functional",
+        "complexity": "complex"
+      }
+    },
+    "phoenix-1757784868408": {
+      "phoenixId": "phoenix-1757784868408",
+      "componentName": "Skeleton",
+      "filePath": "src/components/ui/skeleton.tsx",
+      "lineNumber": 3,
+      "columnNumber": 0,
+      "sourceCode": "function Skeleton({\n  className,\n  ...props\n}: React.HTMLAttributes<HTMLDivElement>) {\n  return (\n    <div\n      className={cn(\"animate-pulse rounded-md bg-muted\", className)}\n      {...props}\n    />\n  )\n}",
+      "props": [
+        {
+          "name": "className",
+          "type": "unknown",
+          "required": false
+        }
+      ],
+      "imports": [],
+      "modificationHints": [
+        "text-update",
+        "style-change"
+      ],
+      "astAnalysis": {
+        "componentType": "functional",
+        "complexity": "simple"
+      }
+    },
+    "phoenix-1757784868409": {
+      "phoenixId": "phoenix-1757784868409",
+      "componentName": "Toaster",
+      "filePath": "src/components/ui/toaster.tsx",
+      "lineNumber": 13,
+      "columnNumber": 7,
+      "sourceCode": "export function Toaster() {\n  const { toasts } = useToast()\n\n  return (\n    <ToastProvider>\n      {toasts.map(function ({ id, title, description, action, ...props }) {\n        return (\n          <Toast key={id} {...props}>\n            <div className=\"grid gap-1\">\n              {title && <ToastTitle>{title}</ToastTitle>}\n              {description && (\n                <ToastDescription>{description}</ToastDescription>\n              )}\n            </div>\n            {action}\n            <ToastClose />\n          </Toast>\n        )\n      })}\n      <ToastViewport />\n    </ToastProvider>\n  )\n}",
+      "props": [],
+      "imports": [],
+      "modificationHints": [
+        "text-update",
+        "style-change"
+      ],
+      "astAnalysis": {
+        "componentType": "functional",
+        "hooks": [
+          "useToast"
+        ],
+        "complexity": "moderate"
+      }
+    }
+  },
+  "stats": {
+    "totalComponents": 13,
+    "totalFiles": 63,
+    "processingTimeMs": 681
+  }
+}
